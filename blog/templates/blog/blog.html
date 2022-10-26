@@ -1,0 +1,11 @@
+{% extends 'blog/bloghome.html' %}
+{% block title %}Blog{% endblock title %}
+{% block bloghome %}
+{% if user.is_authenticated %}
+<div class="col-md-12 border bg-dark text-light shadow p-3 rounded mb-3">
+    <h3 class="py-3">Create New Blogpost.</h3>
+    <a href="{% url 'AdminBlogDashboard' %}" class="stretched-link text-primary">Create New Blogpost.</a>
+</div>
+{% endif %}
+{% include './posts.html' %}
+{% endblock bloghome %}

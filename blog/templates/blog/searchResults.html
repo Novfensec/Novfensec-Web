@@ -1,0 +1,20 @@
+{% extends './bloghome.html' %}
+{% block title %} Search Results | Novfensec {% endblock title %}
+{% block bloghome %}
+<h2 class="h2">Search results : </h2>
+<hr>
+{% if show %}
+<p>No search results</p>
+Your search query : <b>{{query|truncatechars:75}}</b> did not match any documents. <br>
+Suggestions:
+<ul>
+    <li>Make sure that all words are spelled correctly.</li>
+    <li>Try more general keywords.</li>
+    <li> Try fewer keywords.</li>
+    <li> Try different keywords.</li>
+    </li>
+</ul>
+{% else %}
+{% include './posts.html' %}
+{% endif %}
+{% endblock %}

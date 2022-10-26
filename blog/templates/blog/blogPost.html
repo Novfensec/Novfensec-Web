@@ -1,0 +1,84 @@
+{% extends './bloghome.html' %}
+{% block title %}{{post.title}}{% endblock title %}
+{% block desc %}{{post.desc}}{% endblock desc %}
+{% block tags %}{{post.tags}}{% endblock tags %}
+{% block head %}
+{% load static %}
+<meta name="og:title" content="{{post.title}}">
+<meta name="og:description" content="{{post.desc}}">
+<link rel="preload" href="{% static 'css/prism.css' %}" as="style">
+<link rel="stylesheet" href="{% static 'css/prism.css' %}">
+<style>
+    .hero-text {
+        font-size: 2.75rem;
+        font-weight: lighter;
+    }
+    .user-text {
+        font-size: 1.5rem;
+    }
+</style>
+<script src="{% static 'js/prism.js' %}" defer></script>
+{% endblock head %}
+{% block js %}
+<script>
+    const _0x547610=_0x2551;(function(_0x41f24c,_0x4059fa){const _0x5a1d42=_0x2551,_0x47d96c=_0x41f24c();while(!![]){try{const _0x260cd4=parseInt(_0x5a1d42(0x156))/0x1+parseInt(_0x5a1d42(0x159))/0x2*(parseInt(_0x5a1d42(0x161))/0x3)+-parseInt(_0x5a1d42(0x145))/0x4+parseInt(_0x5a1d42(0x13d))/0x5*(parseInt(_0x5a1d42(0x15b))/0x6)+-parseInt(_0x5a1d42(0x14b))/0x7+parseInt(_0x5a1d42(0x163))/0x8*(-parseInt(_0x5a1d42(0x15f))/0x9)+parseInt(_0x5a1d42(0x14e))/0xa*(parseInt(_0x5a1d42(0x166))/0xb);if(_0x260cd4===_0x4059fa)break;else _0x47d96c['push'](_0x47d96c['shift']());}catch(_0x50265a){_0x47d96c['push'](_0x47d96c['shift']());}}}(_0xe038,0x4e908));function _0x2551(_0x3c712b,_0x3fb020){const _0x57f42f=_0xe038();return _0x2551=function(_0x698b23,_0x1a95ed){_0x698b23=_0x698b23-0x13b;let _0x474b32=_0x57f42f[_0x698b23];return _0x474b32;},_0x2551(_0x3c712b,_0x3fb020);}const _0x52697f=(function(){let _0x14ac0f=!![];return function(_0x1ce78e,_0x119a18){const _0x547f37=_0x14ac0f?function(){const _0x1f5017=_0x2551;if(_0x119a18){const _0x52dd98=_0x119a18[_0x1f5017(0x169)](_0x1ce78e,arguments);return _0x119a18=null,_0x52dd98;}}:function(){};return _0x14ac0f=![],_0x547f37;};}()),_0x19cf73=_0x52697f(this,function(){const _0x162d49=_0x2551;return _0x19cf73[_0x162d49(0x140)]()[_0x162d49(0x151)](_0x162d49(0x15e))['toString']()[_0x162d49(0x152)](_0x19cf73)['search']('(((.+)+)+)+$');});_0x19cf73();const _0x1a95ed=(function(){let _0x3dfd7c=!![];return function(_0x1e318f,_0x564e64){const _0x3db7a2=_0x3dfd7c?function(){const _0x5696ee=_0x2551;if(_0x564e64){const _0xb3b2bf=_0x564e64[_0x5696ee(0x169)](_0x1e318f,arguments);return _0x564e64=null,_0xb3b2bf;}}:function(){};return _0x3dfd7c=![],_0x3db7a2;};}()),_0x698b23=_0x1a95ed(this,function(){const _0x1374ce=_0x2551,_0x140dba=function(){const _0x53fe91=_0x2551;let _0x50bdf6;try{_0x50bdf6=Function(_0x53fe91(0x147)+'{}.constructor(\x22return\x20this\x22)(\x20)'+');')();}catch(_0x4ced71){_0x50bdf6=window;}return _0x50bdf6;},_0x3657ee=_0x140dba(),_0x3c268d=_0x3657ee['console']=_0x3657ee[_0x1374ce(0x165)]||{},_0xf9609c=[_0x1374ce(0x155),_0x1374ce(0x143),_0x1374ce(0x148),_0x1374ce(0x13f),'exception',_0x1374ce(0x14d),_0x1374ce(0x146)];for(let _0x405ee9=0x0;_0x405ee9<_0xf9609c[_0x1374ce(0x144)];_0x405ee9++){const _0x140b16=_0x1a95ed[_0x1374ce(0x152)][_0x1374ce(0x150)][_0x1374ce(0x142)](_0x1a95ed),_0x53a19e=_0xf9609c[_0x405ee9],_0x7caa20=_0x3c268d[_0x53a19e]||_0x140b16;_0x140b16[_0x1374ce(0x160)]=_0x1a95ed[_0x1374ce(0x142)](_0x1a95ed),_0x140b16['toString']=_0x7caa20[_0x1374ce(0x140)][_0x1374ce(0x142)](_0x7caa20),_0x3c268d[_0x53a19e]=_0x140b16;}});_0x698b23();const commentform=document[_0x547610(0x168)](_0x547610(0x15c)),deleteform=document[_0x547610(0x153)](_0x547610(0x149));commentform['addEventListener'](_0x547610(0x157),async function(_0x4c2e18){const _0x4dc8db=_0x547610;_0x4c2e18['preventDefault']();let _0x3c2f4e=_0x4dc8db(0x14c),_0x5fde6a=document[_0x4dc8db(0x168)](_0x4dc8db(0x162))[_0x4dc8db(0x15d)];const _0x2dc7f6=new FormData();_0x2dc7f6[_0x4dc8db(0x167)]('postSno',_0x3c2f4e),_0x2dc7f6['append']('comment',_0x5fde6a),_0x2dc7f6[_0x4dc8db(0x167)](_0x4dc8db(0x14a),'{{csrf_token}}'),await fetch(_0x4dc8db(0x141),{'method':_0x4dc8db(0x15a),'body':_0x2dc7f6})['then'](_0x7427c1=>{const _0x112aa3=_0x4dc8db;if(_0x7427c1[_0x112aa3(0x16b)]===0xc8)window['location'][_0x112aa3(0x164)](!![]);else return![];});}),deleteform['forEach'](_0x37f094=>{const _0x42c877=_0x547610;_0x37f094[_0x42c877(0x13b)]('click',async function(_0x52ae3b){const _0x51d4c0=_0x42c877;_0x52ae3b[_0x51d4c0(0x158)]();let _0x108945=_0x51d4c0(0x14c),_0x28560c=this['id'];const _0x316bb5=new FormData();_0x316bb5[_0x51d4c0(0x167)](_0x51d4c0(0x154),_0x108945),_0x316bb5[_0x51d4c0(0x167)]('commentSno',_0x28560c),_0x316bb5[_0x51d4c0(0x167)](_0x51d4c0(0x14a),_0x51d4c0(0x13c)),await fetch(_0x51d4c0(0x13e),{'method':_0x51d4c0(0x15a),'body':_0x316bb5})[_0x51d4c0(0x16a)](_0x4d9bff=>{const _0x54c48e=_0x51d4c0;if(_0x4d9bff[_0x54c48e(0x16b)]===0xc8)window[_0x54c48e(0x14f)][_0x54c48e(0x164)](!![]);else return![];});});});function _0xe038(){const _0x211155=['length','1412432NPtquB','trace','return\x20(function()\x20','info','[delComment]','csrfmiddlewaretoken','2699704tayXNP','{{post.sno}}','table','10daeddz','location','prototype','search','constructor','querySelectorAll','postSno','log','358266qMrfiB','submit','preventDefault','16CsSJvH','POST','414HMsbiU','postComment','value','(((.+)+)+)+$','94869yNPenm','__proto__','231324OjPhAh','comment','264KgTKbT','reload','console','912890BWVWDU','append','getElementById','apply','then','status','addEventListener','{{csrf_token}}','25385oCByUM','/blog/deleteComment','error','toString','/blog/postComment','bind','warn'];_0xe038=function(){return _0x211155;};return _0xe038();}
+</script>
+{% endblock js %}
+{% block bloghome %}
+{% load humanize %}
+<div class="container-fluid py-3 rounded-lg shadow">
+    <h1 class="h1 py-1 text-dark">{{post.title}}</h1>
+    <p class="text-muted"><i>{{post.author}}</i></p>
+    <span class="text-primary">{{post.timeStamp.date}}</span>
+    <hr>
+    <div class="mx-1 py-2">
+        <p class="card-text mb-auto">{{post.content|safe}}</p>
+    </div>
+</div>
+<div class="container-fluid py-4 mb-3">
+    <h2> Comments ({{comments.count}})</h2>
+    {% if user.is_authenticated %}
+    <form action="/blog/postComment" id="postComment" method="post">
+        {% csrf_token %}
+        <div class="form-group user-text">
+            <label for="exampleInputEmail1">Post Comments..</label>
+            <input type="text" class="form-control" id="comment" name="comment" placeholder="Enter comment here"
+                required>
+        </div>
+        <input type="hidden" id="{{post.sno}}" name="postSno" value="{{post.sno}}">
+        <button type="submit" class="btn btn-primary">Post Comment</button>
+    </form>
+    <hr>
+    {% if comments.count == 0 %}
+    <p class="user-text lead">Be the first one to post a Comment.</p>
+    {% endif %}
+    {% else %}
+    <hr>
+    <p class="user-text lead">Please Login to Post a Comment.</p>
+    {% endif %}
+    {% for comment in comments %}
+    <div class="row my-3 border rounded">
+        <div class="col-md-12 p-3">
+            <div class="float-left">
+                <img class="img-fluid rounded" width="75px" height="75px"
+                    src="{% static 'newsite/images/nfsUser.png' %}" alt="nfsUser">
+            </div>
+            <span class="text-muted px-3">{{comment.timestamp|naturaltime}}</span><br>
+            <a class="link user-text px-3" href="#{{comment.user.username}}"><i><b>{{comment.user.username}}</b></i></a>
+            <hr class="mt-4">
+            <div class="my-1">
+                <p class="card-text">{{comment.content}}</p>
+                {% if request.user == comment.user or request.user.is_superuser %}
+                <form class="float-right" action="{% url 'deleteComment' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="postSno" value="{{post.sno}}">
+                    <input type="hidden" name="commentSno" value="{{comment.sno}}">
+                    <button type="submit" class="btn btn-danger" id="{{comment.sno}}" delComment>Delete</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock bloghome %}

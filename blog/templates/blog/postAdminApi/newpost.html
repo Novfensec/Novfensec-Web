@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="container-fluid py-4 border rounded shadow">
+            <h1>Create New posts</h1>
+            <form action="{% url 'AdminBlogDashboard' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Title</label>
+                    <input type="text" class="form-control" id="title" name='title' required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" id="author" name='author' required>
+                </div>
+                <div class="form-group">
+                    <label for="slug">Slug</label>
+                    <input type="slug" class="form-control" id="slug" name='slug' required>
+                </div>
+                <div class="form-group">
+                    <label for="id_content">Content</label>
+                    <textarea class="form-control" id="id_content" name='id_content' required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="desc">Description</label>
+                    <textarea class="form-control" id="desc" name='desc' rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imgscr">Thumbnail</label>
+                    <input type="imgsrc" class="form-control" id="imgsrc" name='imgsrc' required>
+                </div>
+                <div class="form-group">
+                    <label for="tag">Tags</label>
+                    <input type="tag" class="form-control" id="tag" name='tag' required>
+                </div>
+                <input type="submit" id="postsubmit" class="btn btn-outline-success" value="Save">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3 mx-auto">
+        {% include './selecteditpost.html' %}
+    </div>
+</div>
