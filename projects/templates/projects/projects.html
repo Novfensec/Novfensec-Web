@@ -1,0 +1,36 @@
+{% extends 'newsite/base.html' %}
+{% block title %}Projects - Novfensec{% endblock title %}
+{% block projects %}active{% endblock projects %}
+{% block carousel %}
+<div class="bg-dark text-center text-light py-1">
+    <h1 class="display-4 shadow">PROJECTS</h1>
+</div>
+{% endblock carousel %}
+{% block content %}
+{% load static %}
+<div class="row">
+    <div class="col col-lg-4 py-3">
+        <div class="container py-2 px-2 shadow-lg h-100">
+            <div class="p-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png"
+                    class="bd-placeholder-img rounded w-100" alt="nfs-icon">
+                <h4 class="h4 py-2">Notepad For PC <br>[ Windows ]</h4>
+                <p class="lead py-1">Download from here.</p>
+                    <a href="{% url 'notepadP' %}" class="btn btn-outline-success stretched-link">Notepad</a>
+            </div>
+        </div>
+    </div>
+    <div class="col col-lg-4 py-3">
+        <div class="container py-2 px-2 shadow-lg h-100">
+            <div class="p-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
+                    class="bd-placeholder-img rounded w-100" alt="nfs-icon">
+                <h4 class="h4 py-2">Tic Tac Toe Online Game</h4>
+                <p class="lead py-1">Made with Javascript.</p>
+                    <a href="https://novfensec.github.io/Advanced-JS-Tic-Tac-Toe/" target="_blank" rel="noopener"
+                        class="btn btn-outline-success stretched-link">Play Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
