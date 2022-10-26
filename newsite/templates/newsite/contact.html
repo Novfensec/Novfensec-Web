@@ -1,0 +1,44 @@
+{% extends 'newsite/base.html' %}
+{% block contact %}active{% endblock contact %}
+{% block title %}Contact{% endblock title %}
+{% if user.is_authenticated %}
+{% block js %}
+<script>
+  document.querySelector('#name').value = "{{request.user}}";
+</script>
+{% endblock js %}
+{% endif %}
+{% block content %}
+{% load static %}
+<div class="container-fluid py-4 border rounded shadow">
+  <h1>Contact Us</h1>
+  <form action="/contact/" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name='name' placeholder="Enter Your Name" required>
+    </div>
+    <div class="form-group">
+      <label for="name">Email</label>
+      <input type="email" class="form-control" id="email" name='email' placeholder="Enter Your Email" required>
+    </div>
+    <div class="form-group">
+      <label for="name">Phone</label>
+      <input type="tel" class="form-control" id="phone" name='phone' placeholder="Enter Your Phone Number" required>
+    </div>
+    <div class="form-group">
+      <label for="desc">How May I Help You?</label>
+      <textarea class="form-control" id="message" name='message' rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div><br>
+<div class="card shadow">
+  <div class="card-body">
+    <h1 class="card-title">Email At</h1>
+    <p class="card-text"><a class="link" href="#novfensec@protonmail.com">novfensec@protonmail.com</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'newsite/base.html' %}
+{% block about %}active{% endblock about %}
+{% block title %}About{% endblock title %}
+{% block head %}
+{% load static %}
+<style>
+    .hero-image {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("{% static 'newsite/img/1.jpg' %}");
+        height: 24rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    .hero-text {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+</style>
+{% endblock head %}
+{% block carousel %}
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 class="display-4">Hey GUYS! Myself <b>KARTAVYA SHUKLA.</b></h1>
+    </div>
+</div>
+{% endblock carousel %}
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+    <div class="row featurette d-flex justify-content-center align-items-center shadow py-3 rounded">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">My target is to make you Learn how to Code.<span class="text-muted"> I’ll
+                    blow your
+                    mind with fascination to learn programming.</span></h2>
+            <p class="lead">I have got a very large library of courses on Python programming. Learn from my videos
+                anywhere anytime. Get enhanced tutorials on my website and YouTube channel with source codes made with
+                perfection.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="img-fluid" src="{% static 'newsite/img/about1.jpg' %}" alt="">
+
+        </div>
+    </div><br>
+    <div class="row featurette d-flex justify-content-center align-items-center shadow py-3 rounded">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Why My website??<span class="text-muted"> my attempt..</span></h2>
+            <p class="lead">This website is my attempt to help you learn those coding techniques which you might took
+                ages to learn. Choose your merit and get started to code from Scratch to Pro....! with paid courses
+                absolutely for free of cost.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img class="img-fluid" src="{% static 'newsite/img/about2.jpg' %}" alt="">
+
+        </div>
+    </div><br>
+    <div class="row featurette d-flex justify-content-center align-items-center shadow py-3 rounded">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">The Best CodeSpot<span class="text-muted"> Area of Code..</span></h2>
+            <p class="lead">Get together with Novfensec ,might be the best CodeSpot ,and accomplish for your criterion
+                now to show the world the power of your own code. Let's code the world and make programming an asset.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="img-fluid" src="{% static 'newsite/img/about3.jpg' %}" alt="">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
