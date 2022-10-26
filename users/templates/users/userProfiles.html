@@ -1,0 +1,66 @@
+{% extends 'newsite/base.html' %}
+{% block title %}User Profile | Novfensec{% endblock title %}
+{% block js %}
+<script>
+  var _0x27f849 = _0x23fb; function _0x23fb(_0x45f01f, _0x35ac0a) { var _0x32a35f = _0x32a3(); return _0x23fb = function (_0x23fbc7, _0x516462) { _0x23fbc7 = _0x23fbc7 - 0x15c; var _0x3b047f = _0x32a35f[_0x23fbc7]; return _0x3b047f; }, _0x23fb(_0x45f01f, _0x35ac0a); } function _0x32a3() { var _0x393320 = ['#updatelname', '1899404DGvQLu', '{{request.user.email}}', '288078PWXCoF', '5372995BHJcSy', '{{request.user.last_name}}', '{{request.user.first_name}}', '28595907sWCLKp', 'querySelector', '4pTVCin', '#updateemail', '156924iJNcEJ', '380246zrvZDe', '8rJHPRS', '2891499NbpEHP', 'defaultValue', '#updateusername']; _0x32a3 = function () { return _0x393320; }; return _0x32a3(); } (function (_0x29d066, _0x46d6b1) { var _0x5a7906 = _0x23fb, _0x3e1e0b = _0x29d066(); while (!![]) { try { var _0x259559 = parseInt(_0x5a7906(0x166)) / 0x1 + -parseInt(_0x5a7906(0x16c)) / 0x2 + -parseInt(_0x5a7906(0x168)) / 0x3 + -parseInt(_0x5a7906(0x163)) / 0x4 * (parseInt(_0x5a7906(0x15e)) / 0x5) + parseInt(_0x5a7906(0x165)) / 0x6 + -parseInt(_0x5a7906(0x15d)) / 0x7 + -parseInt(_0x5a7906(0x167)) / 0x8 * (-parseInt(_0x5a7906(0x161)) / 0x9); if (_0x259559 === _0x46d6b1) break; else _0x3e1e0b['push'](_0x3e1e0b['shift']()); } catch (_0x3399) { _0x3e1e0b['push'](_0x3e1e0b['shift']()); } } }(_0x32a3, 0x875c3), (document[_0x27f849(0x162)](_0x27f849(0x16a))[_0x27f849(0x169)] = '{{request.user.username}}', document[_0x27f849(0x162)]('#updatefname')[_0x27f849(0x169)] = _0x27f849(0x160), document[_0x27f849(0x162)](_0x27f849(0x16b))['defaultValue'] = _0x27f849(0x15f), document[_0x27f849(0x162)](_0x27f849(0x164))[_0x27f849(0x169)] = _0x27f849(0x15c)));
+</script>
+{% endblock js %}
+{% block content %}
+{% load static %}
+<div class="row">
+  <div class="col-lg-4">
+    <div class="container-fluid text-center shadow py-5 rounded">
+      <img class="bd-placeholder-img rounded" width="150" height="150" src="{% static 'newsite/images/nfsUser.png' %}"
+        preserveAspectRatio="xMidYMid slice" focusable="false" role="img" alt="novfensec-img">
+      <h2 class="py-3">{{user}}</h2>
+      <p class="text-muted"><b>Name: </b>{{user.get_full_name}}</p>
+      <p class="text-muted"><b>Email: </b>{{user.email}}</p>
+      <p class="text-muted"><b>Date Joined: </b>{{user.date_joined.date}}</p>
+    </div>
+    <hr>
+  </div>
+  <div class="col-lg-8 ml-auto p-3 shadow">
+    <h2 class="text-secondary">Edit Profile</h2>
+    <hr>
+    <form action="{% url 'change' %}" method='post'> {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="updateusername" name="updateusername"
+          placeholder="Choose a unique username" required>
+      </div>
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" class="form-control" id="updatefname" name="updatefname" placeholder="Enter Your First Name"
+          required>
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" class="form-control" id="updatelname" name="updatelname" placeholder="Enter Your Last Name"
+          required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="updateemail" name="updateemail" placeholder="name@example.com"
+          required>
+      </div>
+      <div class="form-group">
+        <label for="pass1">Old Password</label>
+        <input type="password" class="form-control" id="updatepass1" name="updatepass1" placeholder="Old Password"
+          required>
+      </div>
+      <div class="form-group">
+        <a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+          aria-controls="collapseExample">
+          <i>Change Password</i>
+        </a>
+        <div class="collapse pt-2" id="collapseExample">
+          <label for="pass2">New Password</label>
+          <input type="password" class="form-control" id="updatepass2" name="updatepass2"
+            placeholder="Enter your new password">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock content %}
